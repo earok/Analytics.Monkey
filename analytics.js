@@ -16,11 +16,11 @@ function GoogleAnalyticsEvent(Category,Action,Label,Value,NoTrack){
 	if(!Label){
 		_gaq.push(['_trackEvent', Category, Action]);
 	}else if(!Value){
-		_gaq.push(['_trackEvent', Category, Action, Label.f_value]);
+		_gaq.push(['_trackEvent', Category, Action, Label.m_value]);
 	}else if(!NoTrack){
-		_gaq.push(['_trackEvent', Category, Action, Label.f_value, Value.f_value]);
+		_gaq.push(['_trackEvent', Category, Action, Label.m_value, Value.m_value]);
 	}else{
-		_gaq.push(['_trackEvent', Category, Action, Label.f_value, Value.f_value, NoTrack.f_value]);
+		_gaq.push(['_trackEvent', Category, Action, Label.m_value, Value.m_value, NoTrack.m_value]);
 	}
 
 }
