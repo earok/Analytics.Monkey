@@ -12,6 +12,15 @@
 		Function InitGoogleAnalytics(ID:string) = "InitGoogleAnalytics"
 		Function GoogleAnalyticsEvent(Category:String, Action:String, Label:StringObject = Null, Value:IntObject = Null, NoTrack:BoolObject = Null) = "GoogleAnalyticsEvent"
 	Public
+#else if TARGET="android"
+	Import "analytics.java"
+	Extern
+		Function InitGoogleAnalytics(ID:string) = "Analytics.InitGoogleAnalytics"
+		Function GoogleAnalyticsEvent(Category:String, Action:String) = "Analytics.GoogleAnalyticsEvent"
+		Function GoogleAnalyticsEvent(Category:String, Action:String, Label:String) = "Analytics.GoogleAnalyticsEvent"
+		Function GoogleAnalyticsEvent(Category:String, Action:String, Label:String, value:int) = "Analytics.GoogleAnalyticsEvent"
+		Function GoogleAnalyticsEvent(Category:String, Action:String, Label:String, value:Int, notrack:bool) = "Analytics.GoogleAnalyticsEvent"
+	Public
 #else
 	Function InitGoogleAnalytics(ID:string)
 	End
