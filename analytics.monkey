@@ -19,10 +19,19 @@
 		Function GoogleAnalyticsEvent(Category:String, Action:String) = "Analytics.GoogleAnalyticsEvent"
 		Function GoogleAnalyticsEvent(Category:String, Action:String, Label:String) = "Analytics.GoogleAnalyticsEvent"
 		Function GoogleAnalyticsEvent(Category:String, Action:String, Label:String, value:int) = "Analytics.GoogleAnalyticsEvent"
-		Function GoogleAnalyticsEvent(Category:String, Action:String, Label:String, value:Int, notrack:bool) = "Analytics.GoogleAnalyticsEvent"
+		Function GoogleAnalyticsEvent(Category:String, Action:String, Label:String, value:Int, notrack:Bool) = "Analytics.GoogleAnalyticsEvent"
 	Public
-#else
-	Function InitGoogleAnalytics(ID:string)
+#Else If TARGET="ios"
+	Import "analytics.ios.cpp"
+	Extern
+		Function InitGoogleAnalytics(ID:string) = "InitGoogleAnalytics"
+		Function GoogleAnalyticsEvent(Category:String, Action:String) = "GoogleAnalyticsEvent"
+		Function GoogleAnalyticsEvent(Category:String, Action:String, Label:String) = "GoogleAnalyticsEvent"
+		Function GoogleAnalyticsEvent(Category:String, Action:String, Label:String, value:int) = "GoogleAnalyticsEvent"
+		Function GoogleAnalyticsEvent(Category:String, Action:String, Label:String, value:Int, notrack:Bool) = "GoogleAnalyticsEvent"
+	Public
+#Else
+	Function InitGoogleAnalytics(ID:String)
 	End
 	Function GoogleAnalyticsEvent(Category:String, Action:String, Label:StringObject = Null, Value:IntObject = Null, NoTrack:BoolObject = Null)
 	End

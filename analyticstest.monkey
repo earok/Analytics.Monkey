@@ -7,11 +7,13 @@ Global target:String = "html5"
 Global target:String = "flash"
 #elseIF TARGET="android"
 Global target:String = "android"
-#else
+#Elseif TARGET="ios"
+Global target:String = "ios"
+#Elseif
 Global target:String = "unknown"
 #endif	
 
-Const GoogleAnalyticsID:String = "UA-XXX" 'Replace this with your own analytics ID
+Const GoogleAnalyticsID:String = "UA-41034489-1" 'Replace this with your own analytics ID
 
 Function Main()
 	New AnalyticsTest()
