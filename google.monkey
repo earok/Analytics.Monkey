@@ -1,33 +1,34 @@
 'General purpose analytics library for Monkey.
 
-#if TARGET="html5"
-	Import "analytics.js"
+'GOOGLE ANALYTICS IMPORTS
+#If TARGET="html5"
+	Import "google.js"
 	Extern
-		Function InitGoogleAnalytics(ID:string) = "InitGoogleAnalytics"
+		Function InitGoogleAnalytics(ID:String) = "InitGoogleAnalytics"
 		Function GoogleAnalyticsEvent(Category:String, Action:String, Label:StringObject = Null, Value:IntObject = Null, NoTrack:BoolObject = Null) = "GoogleAnalyticsEvent"
 	Public
-#else if TARGET="flash"
-	Import "analytics.as"
+#Else If TARGET="flash"
+	Import "google.as"
 	Extern
-		Function InitGoogleAnalytics(ID:string) = "InitGoogleAnalytics"
+		Function InitGoogleAnalytics(ID:String) = "InitGoogleAnalytics"
 		Function GoogleAnalyticsEvent(Category:String, Action:String, Label:StringObject = Null, Value:IntObject = Null, NoTrack:BoolObject = Null) = "GoogleAnalyticsEvent"
 	Public
-#else if TARGET="android"
-	Import "analytics.java"
+#Else If TARGET="android"
+	Import "google.java"
 	Extern
-		Function InitGoogleAnalytics(ID:string) = "Analytics.InitGoogleAnalytics"
+		Function InitGoogleAnalytics(ID:String) = "Analytics.InitGoogleAnalytics"
 		Function GoogleAnalyticsEvent(Category:String, Action:String) = "Analytics.GoogleAnalyticsEvent"
 		Function GoogleAnalyticsEvent(Category:String, Action:String, Label:String) = "Analytics.GoogleAnalyticsEvent"
-		Function GoogleAnalyticsEvent(Category:String, Action:String, Label:String, value:int) = "Analytics.GoogleAnalyticsEvent"
+		Function GoogleAnalyticsEvent(Category:String, Action:String, Label:String, value:Int) = "Analytics.GoogleAnalyticsEvent"
 		Function GoogleAnalyticsEvent(Category:String, Action:String, Label:String, value:Int, notrack:Bool) = "Analytics.GoogleAnalyticsEvent"
 	Public
 #Else If TARGET="ios"
-	Import "analytics.ios.cpp"
+	Import "google.ios.cpp"
 	Extern
-		Function InitGoogleAnalytics(ID:string) = "InitGoogleAnalytics"
+		Function InitGoogleAnalytics(ID:String) = "InitGoogleAnalytics"
 		Function GoogleAnalyticsEvent(Category:String, Action:String) = "GoogleAnalyticsEvent"
 		Function GoogleAnalyticsEvent(Category:String, Action:String, Label:String) = "GoogleAnalyticsEvent"
-		Function GoogleAnalyticsEvent(Category:String, Action:String, Label:String, value:int) = "GoogleAnalyticsEvent"
+		Function GoogleAnalyticsEvent(Category:String, Action:String, Label:String, value:Int) = "GoogleAnalyticsEvent"
 		Function GoogleAnalyticsEvent(Category:String, Action:String, Label:String, value:Int, notrack:Bool) = "GoogleAnalyticsEvent"
 	Public
 #Else
@@ -35,4 +36,4 @@
 	End
 	Function GoogleAnalyticsEvent(Category:String, Action:String, Label:StringObject = Null, Value:IntObject = Null, NoTrack:BoolObject = Null)
 	End
-#endif
+#Endif
