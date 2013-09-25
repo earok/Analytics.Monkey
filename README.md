@@ -44,7 +44,7 @@ You need to download the Google Analytics for flash source from https://code.goo
 
 ANDROID:
 
-Download Google Analytics for Android (https://developers.google.com/analytics/devguides/collection/android/resources), and put libGoogleAnalyticsV2.jar in the /libs path in your Monkey Android build.
+Download Google Analytics for Android V3 (https://developers.google.com/analytics/devguides/collection/android/resources), and put libGoogleAnalyticsServices.jar in the /libs path in your Monkey Android build.
 
 Next, create /res/values/analytics.xml and insert this as the contents (replace stand in analytics ID with your own):
 
