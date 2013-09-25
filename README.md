@@ -92,9 +92,10 @@ iOS:
 Download the testflight APK, extract the contents to the build folder.
 
 Add the following libraries to your XCode project (Linked Frameworks and Libraries section)
-(Unsure if all are necessary)
+(Unsure if all are necessary other than the last one)
 
 - AdSupport.framework
 - libz.dylib
 - SystemConfiguration.framework
 - CoreData.framework
+- libTestFlight.a
