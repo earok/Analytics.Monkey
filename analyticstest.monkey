@@ -16,7 +16,7 @@ Global target:String = "unknown"
 #Endif	
 
 Const GoogleAnalyticsID:String = "UA-41034489-1" 'Replace this with your own analytics ID
-Const TestFlightID:String = "c083ac05-492c-4b8b-b6ed-4432ce173ae4"
+Const TestFlightID:String = "c083ac05-492c-4b8b-b6ed-4432ce173ae4" 'Replace this with your own testflight ID
 
 Function Main()
 	New AnalyticsTest()

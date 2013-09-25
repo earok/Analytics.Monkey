@@ -8,7 +8,7 @@ Release into public domain 3-May-2013 by Erik Hogan
 CURRENT ANALYTICS API AND PLATFORM SUPPORT:
 
 Google Analytics: iOS, Android, HTML5, Flash
-Test Flight: iOS
+Test Flight: iOS, Android
 
 ================
 GOOGLE ANALYTICS 
@@ -85,6 +85,15 @@ There are only two Functions:
 
 - InitTestFlight(id:string), this initialises your TestFlight connection
 - TestFlightCheckpoint(checkpoint:string), this records a TestFlight checkpoint
+
+Once Test Flight has been initialised, it should record crash details automatically.
+
+ANDROID:
+
+Download the testflight APK, extract TestFlightLib to the libs folder in your Android build folder.
+
+Go into your templates/AndroidManifest.xml file and make sure the SDK versions are 8 at the very minimum, ie:
+<uses-sdk android:minSdkVersion="8" android:targetSdkVersion="8" />
 
 
 iOS:
